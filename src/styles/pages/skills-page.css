@@ -1,0 +1,249 @@
+/* ==========================================================================
+   SKILLS PAGE STYLING (skills-page.css)
+   Project: Personal Portfolio React Template
+   Architecture: Standalone Skills Showcase, Tools Grid & Workflow Practices
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. MAIN PAGE CONTENT WRAPPER
+   -------------------------------------------------------------------------- */
+.skills-page-wrapper {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+}
+
+/* Scoped adjustments for Skills section inside standalone page */
+.skills-page-wrapper .skills {
+  padding-top: 1rem;
+  padding-bottom: 4.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. NEON GRADIENT SECTION DIVIDER
+   -------------------------------------------------------------------------- */
+.skills-page__divider {
+  width: 90%;
+  max-width: 1100px;
+  height: 1px;
+  margin: 2rem auto;
+  border: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(56, 189, 248, 0.95) 0%,
+    rgba(99, 102, 241, 0.4) 45%,
+    rgba(99, 102, 241, 0.1) 70%,
+    transparent 100%
+  );
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   3. TOOLS & PLATFORMS SECTION
+   -------------------------------------------------------------------------- */
+.skills-tools-section {
+  position: relative;
+}
+
+.skills-tools__header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem auto;
+}
+
+.skills-tools__badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--clr-secondary, #38bdf8);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.skills-tools__title {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  color: #ffffff;
+}
+
+.skills-tools__title span {
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary, #6366f1),
+    var(--clr-secondary, #38bdf8)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-tools__description {
+  color: var(--clr-muted, #94a3b8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Tools Auto-fit Grid */
+.skills-tools__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+.skills-tool__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+.skills-tool__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.7);
+}
+
+.skills-tool__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: var(--clr-secondary, #38bdf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skills-tool__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.skills-tool__category {
+  font-size: 0.78rem;
+  color: var(--clr-muted, #94a3b8);
+}
+
+/* --------------------------------------------------------------------------
+   4. ENGINEERING WORKFLOW & BEST PRACTICES
+   -------------------------------------------------------------------------- */
+.skills-workflow-section {
+  position: relative;
+}
+
+.skills-workflow__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-workflow__card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+.skills-workflow__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.skills-workflow__check {
+  color: #22c55e;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.skills-workflow__heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.skills-workflow__desc {
+  font-size: 0.88rem;
+  color: var(--clr-muted, #94a3b8);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTTOM SEPARATOR (Between Workflow and Footer/CTA)
+   -------------------------------------------------------------------------- */
+.skills-page__bottom-separator {
+  width: 100% !important;
+  height: 1px !important;
+  margin-top: 0;
+  margin-bottom: -4rem;
+  display: block !important;
+  position: relative !important;
+  z-index: 10 !important;
+  border: none !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(147, 51, 234, 0.45) 20%,
+    rgba(99, 102, 241, 0.6) 40%,
+    rgba(56, 189, 248, 0.95) 65%,
+    rgba(56, 189, 248, 0.4) 85%,
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.45) !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. RESPONSIVE BREAKPOINTS (Mobile & Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .skills-page-wrapper {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .skills-page__divider {
+    margin: -2.5rem auto;
+  }
+
+  .skills-tools__header {
+    margin-bottom: 2rem;
+  }
+
+  .skills-tools__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skills-workflow__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skills-workflow__card {
+    padding: 1.25rem 1rem;
+  }
+
+  .skills-page__bottom-separator {
+    margin-bottom: -2rem;
+  }
+}
