@@ -1,0 +1,57 @@
+/* ==========================================================================
+   BADGE COMPONENT (badge.css)
+   Project: Personal Portfolio React Template
+   Architecture: BEM Glassmorphism Status Badges & Indicators
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BASE BADGE CONTAINER
+   Pill-shaped blurred glass container with subtle border.
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(18, 18, 24, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  color: var(--clr-white);
+  font-size: var(--fs-100);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   2. STATUS INDICATOR DOT
+   Glowing indicator dot representing live status or category states.
+   -------------------------------------------------------------------------- */
+.badge__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clr-secondary);
+  box-shadow: 0 0 12px var(--clr-secondary);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. COLOR MODIFIERS
+   Theme-specific color variations for the glowing status dot.
+   -------------------------------------------------------------------------- */
+/* Primary Modifier (Violet / Purple Glow) */
+.badge--primary .badge__dot {
+  background: var(--clr-primary);
+  box-shadow: 0 0 12px var(--clr-primary);
+}
+
+/* Secondary & Success Modifiers (Cyan Accent Glow) */
+.badge--secondary .badge__dot,
+.badge--success .badge__dot {
+  background: var(--clr-secondary);
+  box-shadow: 0 0 12px var(--clr-secondary);
+}
