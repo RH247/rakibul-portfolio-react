@@ -15,7 +15,8 @@ export const personalData = {
   shortIntro: "Hi, I'm",
   bio: "I build premium websites with clean code, smooth interactions and modern user experiences.",
   avatar: "/assets/images/profile/197541e38725837dbcabb36c567b4aa6.jpg",
-  cvLink: "#",
+  cvLink: "/Rakibul_Hasan_CV.pdf",
+  github: "https://github.com/RH247",
   availableForWork: true,
 };
 
@@ -290,6 +291,8 @@ export const projectsPageData = {
     ]
   }
 };
+
+
 
 
 /* ==========================================================================

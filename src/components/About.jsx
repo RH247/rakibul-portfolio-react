@@ -1,5 +1,5 @@
 import React from "react";
-import { CodeXml } from "lucide-react";
+import { CodeXml, ArrowRight } from "lucide-react";
 import AnimatedNumber from "./AnimatedNumber";
 import { Link, useLocation } from "react-router-dom";
 import { personalData, aboutData } from "../data/portfolioData";
@@ -79,9 +79,13 @@ export default function About() {
 
             {/* Conditionally rendered on Home page only */}
             {!isAboutPage && (
-              <Link to="/about" className="btn btn--primary">
-                More About Me <span>→</span>
-              </Link>
+              <Link 
+  to="/about" 
+  className="btn btn--primary"
+  aria-label="Navigate to full About Me page"
+>
+  More About Me <ArrowRight size={18} strokeWidth={2} aria-hidden="true" />
+</Link>
             )}
           </div>
         </div>

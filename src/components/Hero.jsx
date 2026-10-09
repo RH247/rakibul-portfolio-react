@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Download, CodeXml, Palette, Zap, GraduationCap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Download, CodeXml, Palette, Zap, GraduationCap, Send } from "lucide-react";
 import Badge from "./Badge";
 import AnimatedNumber from "./AnimatedNumber";
 import {
@@ -19,12 +20,15 @@ const iconMap = {
 
 /**
  * Hero Section Component
- * Ambient cyber hero banner with interactive service card slider and profile visuals.
+ * Ambient cyber hero banner with interactive service slider,
+ * smart CTA routing, and marketplace-standard CV download engine.
  */
 export default function Hero() {
+  const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
   const [previous, setPrevious] = useState(null);
 
+  // Auto-rotating service slide interval
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrent((currentIndex) => {
@@ -37,6 +41,7 @@ export default function Hero() {
     return () => clearInterval(intervalId);
   }, []);
 
+  // Slide transition exit cleanup
   useEffect(() => {
     if (previous === null) return;
     const timeoutId = setTimeout(() => {
@@ -45,6 +50,26 @@ export default function Hero() {
 
     return () => clearTimeout(timeoutId);
   }, [previous]);
+
+  // Market Standard "Hire Me" Handler: Smooth scroll if on Home, else navigate to /contact
+  const handleHireMeClick = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/contact");
+    }
+  };
+
+  // Market Standard CV Download Handler
+  const handleCvClick = (e) => {
+    if (!personalData?.cvLink || personalData.cvLink === "#") {
+      e.preventDefault();
+      // Safe fallback if CV file is not placed in public folder yet
+      console.warn("CV file path is not configured in portfolioData.js");
+    }
+  };
 
   return (
     <section className="hero" id="hero">
@@ -66,17 +91,33 @@ export default function Hero() {
             <h2 className="hero__subtitle">{personalData.role}</h2>
             <p className="hero__description">{personalData.bio}</p>
 
+            {/* Marketplace Standard Action Buttons */}
             <div className="hero__buttons">
-              <a href="#contact" className="btn btn--primary">
-                Hire Me
-              </a>
               <a
-                href={personalData.cvLink}
+                href="#contact"
+                onClick={handleHireMeClick}
+                className="btn btn--primary"
+                aria-label="Reach out and collaborate with Rakibul Hasan"
+                title="Initiate Project Collaboration"
+              >
+                Hire Me <Send size={16} strokeWidth={2} aria-hidden="true" />
+              </a>
+
+              <a
+                href={personalData?.cvLink || "#"}
+                onClick={handleCvClick}
                 className="btn btn--outline"
                 target="_blank"
                 rel="noopener noreferrer"
+                download={
+                  personalData?.cvLink && personalData.cvLink !== "#"
+                    ? "Rakibul_Hasan_CV.pdf"
+                    : undefined
+                }
+                aria-label="Download Rakibul Hasan's Curriculum Vitae"
+                title="Download Professional CV"
               >
-                Download CV <Download size={18} strokeWidth={2} />
+                Download CV <Download size={18} strokeWidth={2} aria-hidden="true" />
               </a>
             </div>
 
@@ -120,6 +161,7 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.name}
+                    title={item.name}
                   >
                     <i className={item.icon}></i>
                   </a>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, Send, CheckCircle2 } from "lucide-react";
 
 /* --------------------------------------------------------------------------
    CONTACT INFO METADATA
@@ -26,6 +26,13 @@ const contactChannels = [
     label: "Location",
     value: "Dhaka, Bangladesh",
     href: "https://maps.google.com",
+  },
+  {
+    id: "hours",
+    icon: Clock,
+    label: "Working Hours",
+    value: "Mon – Fri: 09 AM – 06 PM",
+    href: "#",
   },
 ];
 

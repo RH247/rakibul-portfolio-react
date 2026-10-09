@@ -211,11 +211,11 @@ export default function Projects() {
         {/* View All Projects on GitHub Button */}
         <div className="projects__cta">
           <a
-            href="https://github.com/rakibul-hasan?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--outline"
-          >
+  href="https://github.com/RH247"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn btn--outline"
+>
             <span>Explore All 15+ Projects on GitHub</span>
             <svg
               width="18"

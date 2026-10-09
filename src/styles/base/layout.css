@@ -105,3 +105,24 @@ section {
 .page-content section::before {
   display: none;
 }
+
+/* ==========================================================================
+   PAGE ROUTE TRANSITION ANIMATION
+   ========================================================================== */
+.page-content {
+  animation: cyberPageReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform, filter;
+}
+
+@keyframes cyberPageReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.99);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
