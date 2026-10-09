@@ -1,0 +1,265 @@
+/* ==========================================================================
+   SKILLS SECTION STYLESHEET (skills.css)
+   Project: Personal Portfolio React Template
+   Architecture: BEM Categorized Skill Cards, Badges & Neon Progress Tracks
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SECTION BASE WRAPPER & SPACING
+   Centralized fluid vertical padding connected to system spacing tokens.
+   -------------------------------------------------------------------------- */
+.skills {
+  position: relative;
+  padding: var(--section-py, 6rem) 0;
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   2. SECTION HEADER & TYPOGRAPHY
+   Centered eyebrow badge, gradient title clip, and intro description.
+   -------------------------------------------------------------------------- */
+.skills__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 4rem auto;
+}
+
+.skills__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--clr-secondary, #38bdf8);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.skills__title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.skills__title span {
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary, #6366f1),
+    var(--clr-secondary, #38bdf8)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills__description {
+  color: var(--clr-muted, #94a3b8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   3. SKILLS GRID LAYOUT
+   Responsive multi-column auto-fit cards grid.
+   -------------------------------------------------------------------------- */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. SKILL CATEGORY CARD
+   Glass surface card with hover lift and cyber blue border glow.
+   -------------------------------------------------------------------------- */
+.skills__card {
+  padding: 2.25rem 2rem;
+  border-radius: 18px;
+  will-change: transform, box-shadow;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skills__card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7);
+}
+
+.skills__card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.skills__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+}
+
+.skills__category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   5. SKILLS LIST ITEMS & PROGRESS BARS
+   -------------------------------------------------------------------------- */
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills__item--with-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.skills__item--with-bar:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.skills__item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skills__item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.skills__bullet-icon {
+  color: var(--clr-secondary, #38bdf8);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.skills__name {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.skills__item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.skills__percent {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--clr-secondary, #38bdf8);
+  min-width: 32px;
+  text-align: right;
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   6. PROFICIENCY LEVEL BADGES
+   -------------------------------------------------------------------------- */
+.skills__badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.skills__badge--expert {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.skills__badge--advanced {
+  background: rgba(129, 140, 248, 0.12);
+  color: #818cf8;
+  border: 1px solid rgba(129, 140, 248, 0.25);
+}
+
+.skills__badge--intermediate {
+  background: rgba(234, 179, 8, 0.12);
+  color: #eab308;
+  border: 1px solid rgba(234, 179, 8, 0.25);
+}
+
+.skills__badge--learning {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   7. NEON PROGRESS TRACK & SMOOTH FILL
+   -------------------------------------------------------------------------- */
+.skills__progress-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skills__progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  will-change: width;
+  transition:
+    width 3s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 1.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .skills {
+    padding: var(--section-py-compact, 3.5rem) 0;
+  }
+
+  .skills__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .skills__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skills__card {
+    padding: 1.5rem;
+  }
+}
