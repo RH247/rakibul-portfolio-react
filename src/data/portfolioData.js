@@ -290,3 +290,59 @@ export const projectsPageData = {
     ]
   }
 };
+
+
+/* ==========================================================================
+   CONTACT PAGE STANDALONE DATA (5th Item Added for Parallel Alignment)
+   ========================================================================== */
+export const contactPageData = {
+  hubSection: {
+    badge: "DIRECT CONNECT & COLLABORATION",
+    title: "Let's Engineer",
+    titleHighlight: "Something Real",
+    description: "Clear communication expectations, working availability, and collaboration terms."
+  },
+  availabilityMatrix: {
+    statusBadge: "AVAILABLE FOR CLIENT WORK",
+    timezone: "Dhaka, Bangladesh (UTC+6)",
+    responseTime: "< 24 Hours Guaranteed",
+    capacity: "Currently accepting 1-2 selected frontend contracts or MVP builds.",
+    channels: [
+      { id: "ch-1", label: "Direct Inquiries", detail: "Formal briefs & scopes via form above" },
+      { id: "ch-2", label: "Real-time Sync", detail: "Slack, Discord & Figma during active sprints" },
+      { id: "ch-3", label: "Code Handoff", detail: "Clean Git commits & documented PR reviews" }
+    ]
+  },
+  faqList: [
+    {
+      id: "faq-1",
+      number: "01",
+      question: "What is your typical turnaround time for deliverables?",
+      answer: "Single-page cyber landing pages typically take 3–5 business days. Full multi-route web applications or architecture migrations usually require 2–3 weeks depending on feature scope."
+    },
+    {
+      id: "faq-2",
+      number: "02",
+      question: "How do we handle sprint communication and milestone updates?",
+      answer: "I deliver atomic, measurable progress with interactive preview URLs, recorded Loom/demo walk-throughs, and transparent daily or bi-weekly syncs via Slack or Discord."
+    },
+    {
+      id: "faq-3",
+      number: "03",
+      question: "What engagement and pricing models do you support?",
+      answer: "I support fixed-price milestone delivery for well-scoped projects, as well as weekly/monthly dedicated retainer engineering for ongoing product iterations."
+    },
+    {
+      id: "faq-4",
+      number: "04",
+      question: "Do you provide post-delivery maintenance and warranty?",
+      answer: "Yes, all production handoffs include a dedicated 14-day warranty period covering bug-fixes, edge-case UI adjustments, and live hosting deployment assistance."
+    },
+    {
+      id: "faq-5",
+      number: "05",
+      question: "Can you collaborate directly with existing teams & Git repos?",
+      answer: "Yes, I regularly collaborate inside existing GitHub/GitLab repositories, adhering strictly to git-flow branches, code reviews, and established styling conventions."
+    }
+  ]
+};
