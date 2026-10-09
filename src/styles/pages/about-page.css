@@ -1,0 +1,584 @@
+/* ==========================================================================
+   ABOUT PAGE STYLING (about-page.css)
+   Project: Personal Portfolio React Template
+   Architecture: Standalone 100vh Hero, Qualifications Timeline & Roadmap
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. MAIN PAGE CONTENT WRAPPER
+   -------------------------------------------------------------------------- */
+.about-page-wrapper {
+  padding-bottom: 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. 100VH FULL SCREEN ABOUT HERO SECTION (Only for About Page)
+   -------------------------------------------------------------------------- */
+.about-page-wrapper .about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 3.5rem;
+  box-sizing: border-box;
+}
+
+.about-page-wrapper .about .container {
+  width: 100%;
+}
+
+/* Cinematic Image Wrapper */
+.about-page-wrapper .about__image-wrapper {
+  max-width: 440px;
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+}
+
+/* Fluid Typography & Spacing */
+.about-page-wrapper .about__title {
+  font-size: clamp(2.5rem, 4.5vw, 3.4rem);
+  line-height: 1.18;
+  margin-bottom: 0.5rem;
+}
+
+.about-page-wrapper .about__description {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+}
+
+/* Stats Counter Layout */
+.about-page-wrapper .about__stats {
+  gap: 2.75rem;
+  margin-top: 1rem;
+}
+
+.about-page-wrapper .about__stat-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.about-page-wrapper .about__stat-label {
+  font-size: 0.88rem;
+}
+
+/* Baseline Glowing Divider Separator */
+.about-page-wrapper .about__separator--bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 1px;
+  margin: 0 auto;
+  border: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(56, 189, 248, 0.95) 0%,
+    rgba(99, 102, 241, 0.4) 45%,
+    rgba(99, 102, 241, 0.1) 70%,
+    transparent 100%
+  ) !important;
+  box-shadow:
+    0 0 16px rgba(56, 189, 248, 0.6),
+    0 0 30px rgba(99, 102, 241, 0.3) !important;
+  z-index: 5;
+}
+
+/* --------------------------------------------------------------------------
+   3. TIMELINE SECTION & QUALIFICATIONS
+   -------------------------------------------------------------------------- */
+.timeline-section {
+  margin-top: 1.5rem;
+}
+
+.timeline-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.timeline-header .section-title__badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--clr-secondary, #38bdf8);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-header .section-title__heading {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.timeline-header .section-title__description {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--clr-muted, #94a3b8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Timeline Two-Column Grid */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.timeline-column {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.timeline-column__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+}
+
+.timeline-column__title span {
+  color: var(--clr-secondary, #38bdf8);
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: relative;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: calc(-1.5rem - 6px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clr-secondary, #38bdf8);
+  box-shadow: 0 0 10px var(--clr-secondary, #38bdf8);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--clr-secondary, #38bdf8);
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.timeline-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-place {
+  font-size: 0.9rem;
+  color: var(--clr-muted, #94a3b8);
+  margin-bottom: 0.6rem;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--clr-muted, #94a3b8);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   4. HORIZONTAL PROFESSIONAL JOURNEY ROADMAP
+   -------------------------------------------------------------------------- */
+.journey-roadmap-section {
+  margin-top: -4rem;
+  position: relative;
+}
+
+.journey-roadmap__header {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.journey-roadmap__badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--clr-secondary, #38bdf8);
+  margin-bottom: 0.5rem;
+}
+
+.journey-roadmap__title {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.journey-roadmap__wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Base Track */
+.journey-roadmap__track {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* Neon Gradient Progress Fill */
+.journey-roadmap__progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #a855f7);
+  box-shadow:
+    0 0 14px rgba(56, 189, 248, 0.8),
+    0 0 25px rgba(168, 85, 247, 0.5);
+  will-change: width;
+  transition: width 3.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Milestone Steps Grid */
+.journey-roadmap__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.journey-roadmap__node {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dot on Track */
+.journey-roadmap__dot-wrapper {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.journey-roadmap__dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0f172a;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Active Glowing Dot */
+.journey-roadmap__node--active .journey-roadmap__dot {
+  border-color: #38bdf8;
+  background: #818cf8;
+  box-shadow:
+    0 0 16px #38bdf8,
+    0 0 28px rgba(129, 140, 248, 0.9);
+  transform: scale(1.2);
+}
+
+/* Future Milestone */
+.journey-roadmap__node--future {
+  opacity: 0.65;
+}
+
+.journey-roadmap__node--future .journey-roadmap__dot {
+  border-style: dashed;
+}
+
+/* Node Card */
+.journey-roadmap__card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1.5rem 1.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 125px;
+  transition: all 0.3s ease;
+}
+
+.journey-roadmap__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.journey-roadmap__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: var(--clr-secondary, #38bdf8);
+  flex-shrink: 0;
+}
+
+.journey-roadmap__year {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--clr-secondary, #38bdf8);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+.journey-roadmap__step-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+
+.journey-roadmap__subtitle {
+  font-size: 0.82rem;
+  color: var(--clr-muted, #94a3b8);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   5. NEON GRADIENT DIVIDER
+   -------------------------------------------------------------------------- */
+.timeline-divider {
+  width: 100%;
+  height: 1px;
+  margin: 1rem 0 3.5rem 0;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.25) 20%,
+    rgba(56, 189, 248, 0.85) 50%,
+    rgba(99, 102, 241, 0.25) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   6. PHILOSOPHY CARD
+   -------------------------------------------------------------------------- */
+.philosophy-card {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.philosophy-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.philosophy-text {
+  font-size: 1rem;
+  color: var(--clr-muted, #94a3b8);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   7. FOOTER TOP BORDER OVERRIDE (About Page Scope)
+   -------------------------------------------------------------------------- */
+body:has(.about-page-wrapper) footer {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.25) 20%,
+    rgba(56, 189, 248, 0.85) 50%,
+    rgba(99, 102, 241, 0.25) 80%,
+    transparent 100%
+  ) 1;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE BREAKPOINTS (Tablet: max-width 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .about-page-wrapper .about {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  .journey-roadmap__steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+
+  .journey-roadmap__track,
+  .journey-roadmap__dot-wrapper {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE BREAKPOINTS (Mobile: max-width 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .about-page-wrapper {
+    padding-bottom: 2rem;
+  }
+
+  .about-page-wrapper .about {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .about-page-wrapper .about__image-wrapper {
+    max-width: 300px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .about-page-wrapper .about__stats {
+    margin-bottom: 0 !important;
+    padding-bottom: 1.5rem !important;
+    gap: 1.5rem;
+  }
+
+  .about-page-wrapper .timeline-section {
+    margin-top: -2rem !important;
+  }
+
+  .timeline-header {
+    margin-bottom: 1.25rem !important;
+  }
+
+  .timeline-header .section-title__badge {
+    margin-bottom: 1rem;
+  }
+
+  .timeline-header .section-title__heading {
+    margin-bottom: 1rem;
+  }
+
+  .about-page-wrapper .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem !important;
+    margin-top: 1rem;
+    margin-bottom: 0 !important;
+  }
+
+  .about-page-wrapper .timeline-column {
+    padding: 1.25rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .about-page-wrapper .timeline-column__title {
+    font-size: 1.15rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-page-wrapper .about__description {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+    text-align: center;
+  }
+
+  .about-page-wrapper .about__title {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: clamp(1.85rem, 6vw, 2.3rem) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1.25rem !important;
+    text-align: center;
+  }
+
+  .about-page-wrapper .about__header {
+    margin-top: 0 !important;
+    text-align: center;
+  }
+
+  .about-page-wrapper .timeline-list {
+    gap: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  /* Mobile Roadmap Spacing */
+  .journey-roadmap-section {
+    margin-top: -8rem;
+  }
+
+  .journey-roadmap__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-roadmap__steps {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .journey-roadmap__card {
+    min-height: auto;
+    padding: 1.15rem 1rem;
+  }
+
+  .about-page-wrapper .timeline-divider {
+    margin-top: -2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .about-page-wrapper .philosophy-card {
+    margin-top: 1rem !important;
+    padding: 1.5rem 1.25rem !important;
+  }
+}
