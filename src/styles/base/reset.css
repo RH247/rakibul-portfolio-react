@@ -1,0 +1,168 @@
+/* ==========================================================================
+   GLOBAL RESET SYSTEM (reset.css)
+   Project: Personal Portfolio React Template
+   Architecture: Cross-browser standard CSS reset & baseline configurations
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BOX SIZING & MARGIN/PADDING RESET
+   Applies border-box sizing and removes default user-agent margins and paddings.
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. HTML & SMOOTH SCROLLING
+   Enables smooth scroll transitions with accessibility preferences.
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE BODY CONFIGURATION
+   Sets baseline font styling, background variables, and anti-aliasing.
+   -------------------------------------------------------------------------- */
+body {
+  min-height: 100vh;
+  background: var(--clr-bg);
+  color: var(--clr-white);
+  font-family: var(--ff-body);
+  font-size: var(--fs-200);
+  line-height: 1.7;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   4. MEDIA & RESPONSIVE IMAGES
+   Prevents media elements from overflowing their parent containers.
+   -------------------------------------------------------------------------- */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   5. ANCHORS & HYPERLINKS
+   Removes default link underlines and inherits text coloration.
+   -------------------------------------------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. LISTS
+   Strips default bullets and padding from unordered and ordered lists.
+   -------------------------------------------------------------------------- */
+ul,
+ol {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. FORM ELEMENTS & INTERACTION
+   Resets button defaults and inherits global typography tokens.
+   -------------------------------------------------------------------------- */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* --------------------------------------------------------------------------
+   8. TABLES
+   Collapses border spacing for clean tabular layouts.
+   -------------------------------------------------------------------------- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. SEMANTIC STRUCTURAL ELEMENTS
+   Establishes relative coordinate context for sections.
+   -------------------------------------------------------------------------- */
+section {
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   10. EMBEDDED FRAMES
+   Removes standard iframe borders.
+   -------------------------------------------------------------------------- */
+iframe {
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   11. ACCESSIBILITY & FOCUS OUTLINES
+   Provides high-contrast outline focus states for keyboard navigation.
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   12. TEXT HIGHLIGHT / SELECTION
+   Custom styling for highlighted texts matching theme colors.
+   -------------------------------------------------------------------------- */
+::selection {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+/* --------------------------------------------------------------------------
+   13. SCROLLBAR VISIBILITY CONTROL
+   Hides default browser scrollbars while retaining full scrolling capability.
+   -------------------------------------------------------------------------- */
+html,
+body {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE / Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
