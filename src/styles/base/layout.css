@@ -1,0 +1,107 @@
+/* ==========================================================================
+   LAYOUT SYSTEM (layout.css)
+   Project: Personal Portfolio React Template
+   Architecture: Global Layout Wrappers, Containers & Alignment Utilities
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL CONTAINER
+   Responsive max-width wrapper centered horizontally across viewports.
+   -------------------------------------------------------------------------- */
+.container {
+  width: min(92%, var(--container));
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   2. MAIN CONTENT WRAPPER
+   Ensures outer horizontal bleed and prevents unwanted scrollbars.
+   -------------------------------------------------------------------------- */
+main {
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   3. BASE SECTION SPACING (Centralized Gap Control)
+   Default relative positioning and vertical padding driven by system tokens.
+   -------------------------------------------------------------------------- */
+section {
+  position: relative;
+  padding-block: var(--section-py, var(--space-8));
+}
+
+/* --------------------------------------------------------------------------
+   4. SECTION DIVIDERS & SEPARATORS (Centralized Border Control)
+   Standardized border divider utility classes across all sections.
+   -------------------------------------------------------------------------- */
+.has-divider {
+  border-bottom: var(--divider-border);
+}
+
+.divider-top {
+  border-top: var(--divider-border);
+}
+
+.divider-bottom {
+  border-bottom: var(--divider-border);
+}
+
+/* --------------------------------------------------------------------------
+   5. GRID SYSTEM
+   Common grid layout utility with predefined token gap.
+   -------------------------------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   6. FLEXBOX UTILITIES
+   Reusable flex alignment helper classes.
+   -------------------------------------------------------------------------- */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   7. STACK UTILITY
+   Lobotomized owl selector for consistent vertical spacing between children.
+   -------------------------------------------------------------------------- */
+.stack > * + * {
+  margin-top: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   8. STANDALONE PAGE CONTENT WRAPPER
+   Multi-page standalone wrapper with navbar offset and minimum viewport height.
+   -------------------------------------------------------------------------- */
+.page-content {
+  padding-top: 5rem;
+  min-height: calc(100vh - 80px);
+}
+
+/* Standalone pages: eliminate unwanted top border conflicts */
+.page-content section,
+.page-content .about,
+.page-content .skills,
+.page-content .projects,
+.page-content .contact {
+  border-top: none;
+}
+
+.page-content .about::before,
+.page-content section::before {
+  display: none;
+}
