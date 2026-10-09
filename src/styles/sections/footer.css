@@ -1,0 +1,317 @@
+/* ==========================================================================
+   FOOTER SECTION STYLESHEET (footer.css)
+   Project: Personal Portfolio React Template
+   Architecture: Pre-Footer Banner, 4-Column Grid & Live Status Indicator
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FOOTER WRAPPER & AMBIENT LIGHT
+   -------------------------------------------------------------------------- */
+.footer {
+  position: relative;
+  background: #08090e;
+  padding: var(--section-py-compact, 6rem) 0 2.5rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.footer__glow-sphere {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 250px;
+  background: radial-gradient(ellipse at top, rgba(56, 189, 248, 0.15), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* --------------------------------------------------------------------------
+   2. PRE-FOOTER CYBER BANNER
+   -------------------------------------------------------------------------- */
+.footer__banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3.5rem 3.8rem;
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(14, 16, 25, 0.85) 100%
+  );
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    0 0 35px rgba(56, 189, 248, 0.08);
+  margin-bottom: 5.5rem;
+  gap: 2.5rem;
+}
+
+.footer__banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.8rem;
+}
+
+.footer__banner-title {
+  color: var(--clr-white);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.footer__banner-title span {
+  background: linear-gradient(90deg, #a78bfa 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer__banner-sub {
+  color: var(--clr-muted, #a1a1aa);
+  font-size: 0.98rem;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.footer__banner-btn {
+  padding: 1.1rem 2.6rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. FOUR-COLUMN FOOTER GRID
+   -------------------------------------------------------------------------- */
+.footer__main {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.3fr 1.1fr;
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+/* Brand info */
+.footer__logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--clr-white);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.footer__logo span {
+  color: #38bdf8;
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+}
+
+.footer__bio {
+  color: var(--clr-muted, #a1a1aa);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  max-width: 320px;
+  margin-bottom: 1.8rem;
+}
+
+/* Social icons */
+.footer__socials {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.footer__social-link {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--clr-text);
+  display: grid;
+  place-items: center;
+  will-change: transform;
+  transition: all var(--transition);
+}
+
+.footer__social-link:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+}
+
+/* Column titles */
+.footer__col-title {
+  color: var(--clr-white);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.3rem;
+}
+
+.footer__nav-list,
+.footer__services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer__nav-link {
+  color: var(--clr-muted, #a1a1aa);
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all var(--transition);
+  display: inline-block;
+}
+
+.footer__nav-link:hover {
+  color: #38bdf8;
+  transform: translateX(5px);
+}
+
+.footer__services-list li {
+  color: var(--clr-muted, #a1a1aa);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Return to top button */
+.footer__action-hint {
+  color: var(--clr-muted, #a1a1aa);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.footer__top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--clr-white);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  will-change: transform;
+  transition: all var(--transition);
+}
+
+.footer__top-btn:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(56, 189, 248, 0.25));
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   4. DIVIDER & BOTTOM BAR
+   -------------------------------------------------------------------------- */
+.footer__divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  margin-bottom: 2rem;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.footer__copyright {
+  color: var(--clr-muted, #a1a1aa);
+  font-size: 0.88rem;
+}
+
+.footer__copyright strong {
+  color: var(--clr-white);
+}
+
+/* Active Status Pill */
+.footer__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  color: #86efac;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.footer__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .footer__banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.8rem 2.2rem;
+  }
+
+  .footer__main {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__main {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
