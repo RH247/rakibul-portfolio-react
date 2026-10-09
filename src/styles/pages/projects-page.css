@@ -8,13 +8,37 @@
 }
 
 /* --------------------------------------------------------------------------
-   1. FULL-WIDTH SLEEK NEON SEPARATORS (Guaranteed 100% Viewport Width)
+   1. REMOVE ORIGINAL SECTION BORDER & EXTRA GAP
+   Stops double borders so ONLY the sleek full-width separator is displayed
+   -------------------------------------------------------------------------- */
+.projects-page-wrapper .projects {
+  border-bottom: none !important;
+  padding-bottom: 2rem !important;
+}
+
+.projects-page-wrapper .projects::after,
+.projects-page-wrapper .projects::before {
+  display: none !important;
+}
+
+.projects-page-wrapper .projects .container {
+  border-bottom: none !important;
+}
+
+.projects-page-wrapper .projects .projects__separator,
+.projects-page-wrapper .projects .about__separator,
+.projects-page-wrapper .projects hr {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. SINGLE SLEEK NEON SEPARATOR (100% Full Viewport Width)
    Exact subtle glow and opacity matching Skills & About pages
    -------------------------------------------------------------------------- */
 .projects-page__separator {
   width: 100% !important;
   height: 1px !important;
-  margin: 4.5rem 0 3.5rem 0;
+  margin: 1.5rem 0 3.5rem 0 !important;
   display: block !important;
   position: relative !important;
   z-index: 5 !important;
@@ -32,12 +56,12 @@
 }
 
 .projects-page__separator--bottom {
-  margin-top: 4.5rem;
-  margin-bottom: 0;
+  margin-top: 4rem !important;
+  margin-bottom: 0 !important;
 }
 
 /* --------------------------------------------------------------------------
-   2. ENGINEERING STANDARDS & ARCHITECTURE SECTION
+   3. ENGINEERING STANDARDS & ARCHITECTURE SECTION
    -------------------------------------------------------------------------- */
 .projects-standards-section {
   position: relative;
@@ -58,30 +82,34 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: var(--color-primary);
+  color: #38bdf8;
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.2);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-full, 9999px);
   margin-bottom: 1rem;
 }
 
 .projects-standards__title {
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #f8fafc;
   line-height: 1.25;
   margin-bottom: 1rem;
 }
 
+/* Solid Hex Gradient - Guaranteed to never turn invisible */
 .projects-standards__title span {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #38bdf8;
+  display: inline-block;
 }
 
 .projects-standards__desc {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: #94a3b8;
   line-height: 1.6;
 }
 
@@ -97,8 +125,8 @@
   display: flex;
   align-items: flex-start;
   gap: 1.25rem;
-  border-radius: var(--radius-lg);
-  transition: transform var(--transition-normal), border-color var(--transition-normal);
+  border-radius: var(--radius-lg, 12px);
+  transition: transform var(--transition-normal, 0.3s ease), border-color var(--transition-normal, 0.3s ease);
 }
 
 .projects-standard__card:hover {
@@ -110,13 +138,13 @@
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-md, 8px);
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: #38bdf8;
 }
 
 .projects-standard__content {
@@ -126,18 +154,18 @@
 .projects-standard__heading {
   font-size: 1.15rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #f8fafc;
   margin-bottom: 0.5rem;
 }
 
 .projects-standard__text {
   font-size: 0.925rem;
-  color: var(--text-secondary);
+  color: #94a3b8;
   line-height: 1.6;
 }
 
 /* --------------------------------------------------------------------------
-   3. RESPONSIVE BREAKPOINTS
+   4. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   .projects-standards__grid {
@@ -147,7 +175,7 @@
 
 @media (max-width: 768px) {
   .projects-page__separator {
-    margin: 2.5rem 0 2rem 0;
+    margin: 1rem 0 2rem 0 !important;
   }
   
   .projects-standards__title {
