@@ -1,0 +1,38 @@
+/* ==========================================================================
+   MASTER APPLICATION STYLESHEET (main.css)
+   Project: Personal Portfolio React Template
+   Architecture: Strict Cascading Order (Tokens -> Reset -> Components -> Layout -> Sections -> Pages -> Responsive)
+   ========================================================================== */
+
+/* 1. Design Tokens & Variables (Must load first) */
+@import "./base/variables.css";
+
+/* 2. Base Reset & Typography */
+@import "./base/reset.css";
+@import "./base/typography.css";
+@import "./base/layout.css";
+@import "./base/utilities.css";
+
+/* 3. Reusable UI Components */
+@import "./components/badge.css";
+@import "./components/button.css";
+@import "./components/card.css";
+@import "./components/navbar.css";
+@import "./components/preloader.css";
+@import "./components/section-title.css";
+@import "./components/social.css";
+
+/* 4. Core Page Sections */
+@import "./sections/hero.css";
+@import "./sections/about.css";
+@import "./sections/skills.css";
+@import "./sections/projects.css";
+@import "./sections/contact.css";
+@import "./sections/footer.css";
+
+/* 5. Standalone Route Pages */
+@import "./pages/about-page.css";
+@import "./pages/skills-page.css";
+
+/* 6. Global Responsive Overrides (Must load last) */
+@import "./responsive.css";
