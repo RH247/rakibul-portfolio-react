@@ -1,0 +1,392 @@
+/* ==========================================================================
+   GLOBAL RESPONSIVE STYLESHEET (responsive.css)
+   Project: Personal Portfolio React Template
+   Architecture: Production-ready Breakpoints (Tablet, Mobile & Viewport Shield)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. TABLET & IPAD SCREENS (max-width: 900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  /* ------------------------------------------------------------------------
+     1.1 Navigation Bar
+     ------------------------------------------------------------------------ */
+  .navbar__links,
+  .navbar__cta,
+  .navbar__cta-desktop {
+    display: none !important;
+  }
+
+  .navbar__toggle {
+    display: flex !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     1.2 Hero Section Container & Layout
+     ------------------------------------------------------------------------ */
+  .hero {
+    padding-top: 110px !important;
+    padding-bottom: 3.5rem !important;
+    min-height: auto !important;
+    overflow: clip !important; /* Prevent internal viewport scrollbar leaks */
+  }
+
+  .hero__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.8rem !important;
+  }
+
+  /* Photo Placement (Top Order) */
+  .hero__right {
+    order: 1 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .hero__photo {
+    position: relative !important;
+    display: block !important;
+    margin: 0 auto !important;
+    transform: scale(0.95);
+    transform-origin: center top;
+    margin-bottom: 0px !important;
+  }
+
+  .hero__photo-card {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .hero__photo-ring {
+    position: absolute !important;
+    inset: -2px !important;
+    width: calc(100% + 4px) !important;
+    height: calc(100% + 4px) !important;
+    pointer-events: none !important;
+  }
+
+  .hero__photo-glow {
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Content & Typography (Bottom Order) */
+  .hero__left {
+    order: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .hero__title {
+    font-size: clamp(2.6rem, 8.5vw, 3.4rem) !important;
+    line-height: 1.12 !important;
+    margin: 0.4rem 0 0.6rem !important;
+  }
+
+  .hero__subtitle {
+    font-size: 1.35rem !important;
+  }
+
+  .hero__description {
+    max-width: 480px !important;
+    margin-inline: auto !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Tablet / iPad Button Layout (Side-by-side alignment) */
+  .hero__buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    margin-inline: auto !important;
+  }
+
+  .hero__buttons .btn {
+    white-space: nowrap !important;
+    padding: 0.85rem 1.6rem !important;
+    font-size: 0.95rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    width: auto !important;
+  }
+
+  .hero__stats {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     1.3 About Section (Tablet Single-Column & Balanced Spacing)
+     ------------------------------------------------------------------------ */
+  .about {
+    padding-top: 3.5rem !important;
+    padding-bottom: 2.5rem !important;
+    overflow-x: hidden !important;
+  }
+
+  .about__grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 3rem !important;
+  }
+
+  .about__left {
+    order: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .about__image-wrapper {
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+
+  /* Clean Code badge perfectly centered under image card */
+  .about__experience {
+    left: 50% !important;
+    right: auto !important;
+    bottom: -18px !important;
+    transform: translateX(-50%) !important;
+    width: max-content !important;
+  }
+
+  .about__right {
+    order: 2 !important;
+    max-width: 580px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .about__eyebrow {
+    justify-content: center !important;
+  }
+
+  .about__title {
+    font-size: clamp(2.2rem, 5.5vw, 2.8rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .about__description {
+    max-width: 520px !important;
+    margin-inline: auto !important;
+    margin-bottom: 2rem !important;
+    font-size: 0.98rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Tablet stats grid evenly spaced without label collision */
+  .about__stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto 2rem auto !important;
+  }
+
+  .about__stat {
+    padding: 0 0.5rem !important;
+  }
+
+  .about__stat span {
+    white-space: normal !important;
+    font-size: 0.82rem !important;
+  }
+
+  .about .btn {
+    margin: 0 auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     1.4 Skills Section Spacing
+     ------------------------------------------------------------------------ */
+  .skills {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     1.5 Projects Section Spacing & GitHub CTA Button
+     ------------------------------------------------------------------------ */
+  .projects {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.2rem !important;
+  }
+
+  .projects__cta,
+  .projects__more,
+  .projects a[href*="github"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.6rem !important;
+    width: auto !important;
+    max-width: fit-content !important;
+    margin: 1.2rem auto 0 !important;
+    padding: 0.75rem 1.4rem !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .projects__cta span,
+  .projects a[href*="github"] span {
+    font-size: 1rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     1.6 Contact Section Spacing
+     ------------------------------------------------------------------------ */
+  .contact {
+    padding-top: 2.2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .contact__form,
+  .contact__card,
+  .contact form {
+    margin-bottom: 0 !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     1.7 Footer Section Spacing
+     ------------------------------------------------------------------------ */
+  .footer {
+    padding-top: 2rem !important;
+  }
+
+  .footer__cta-card,
+  .footer__box {
+    margin-top: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   2. SMALL MOBILE SCREENS (max-width: 480px - iPhone SE & Compact Phones)
+   ========================================================================== */
+@media (max-width: 480px) {
+  /* ------------------------------------------------------------------------
+     2.1 Hero Small Adjustments
+     ------------------------------------------------------------------------ */
+  .hero__photo {
+    transform: scale(0.88);
+    margin-bottom: -15px !important;
+  }
+
+  .hero__title {
+    font-size: 2.45rem !important;
+  }
+
+  /* Stack buttons vertically on small mobile for touch ergonomics */
+  .hero__buttons {
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+    max-width: 320px !important;
+  }
+
+  .hero__buttons .btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* ------------------------------------------------------------------------
+     2.2 About Small Adjustments
+     ------------------------------------------------------------------------ */
+  .about__image-wrapper {
+    max-width: 270px !important;
+  }
+
+  .about__experience {
+    left: 50% !important;
+    right: auto !important;
+    bottom: -16px !important;
+    transform: translateX(-50%) !important;
+    padding: 0.6rem 0.9rem !important;
+    width: max-content !important;
+  }
+
+  .about__experience strong {
+    font-size: 0.75rem !important;
+  }
+
+  .about__experience span {
+    font-size: 0.65rem !important;
+  }
+
+  /* Vertical stack stats card on small phones */
+  .about__stats {
+    grid-template-columns: 1fr !important;
+    max-width: 260px !important;
+    gap: 0.75rem !important;
+    text-align: left;
+  }
+
+  .about__stat,
+  .about__stat:first-child {
+    padding: 0.3rem 0 0.3rem 1rem !important;
+    border-left: 2px solid rgba(56, 189, 248, 0.3) !important;
+  }
+
+  .about__stat span {
+    white-space: normal !important;
+  }
+
+  .about .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
+}
+
+/* ==========================================================================
+   3. MOBILE VIEWPORT SHIELD (Prevents Horizontal Scroll & Overflow)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero,
+  .hero__aurora,
+  .footer {
+    overflow: clip !important;
+    max-width: 100vw !important;
+  }
+
+  .hero__aurora-1,
+  .hero__aurora-2,
+  .hero__aurora-3 {
+    max-width: 100vw !important;
+  }
+
+  .footer__glow-sphere {
+    max-width: 100vw !important;
+    width: min(100%, 650px) !important;
+  }
+}
