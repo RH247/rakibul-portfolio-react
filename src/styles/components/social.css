@@ -1,0 +1,71 @@
+/* ==========================================================================
+   SOCIAL COMPONENT (social.css)
+   Project: Personal Portfolio React Template
+   Architecture: BEM Floating Glassmorphism Social Links & Neon Glow
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BASE SOCIAL CONTAINER & LAYOUT MODIFIERS
+   Flex container with horizontal and vertical directional modifiers.
+   -------------------------------------------------------------------------- */
+.social {
+  display: flex;
+  gap: 0.875rem;
+}
+
+/* Vertical layout modifier (used in Hero photo sidebar) */
+.social--vertical {
+  flex-direction: column;
+}
+
+/* Horizontal layout modifier (used in footer or contact sections) */
+.social--horizontal {
+  flex-direction: row;
+}
+
+/* --------------------------------------------------------------------------
+   2. SOCIAL LINK CIRCLE
+   Circular frosted-glass button with centered icon alignment.
+   -------------------------------------------------------------------------- */
+.social__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  color: var(--clr-primary-light);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  will-change: transform;
+  transition:
+    transform var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+/* Icon size normalization for FontAwesome and SVG / Lucide icons */
+.social__link i,
+.social__link svg {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. HOVER & ACCESSIBILITY STATES
+   Cyan neon glow, elevation lift, and keyboard focus indicator.
+   -------------------------------------------------------------------------- */
+.social__link:hover {
+  color: var(--clr-secondary);
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.4);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.18);
+}
+
+.social__link:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 4px;
+}
