@@ -1,0 +1,655 @@
+/* ==========================================================================
+   HERO SECTION STYLESHEET (hero.css)
+   Project: Personal Portfolio React Template
+   Architecture: Hero Grid, Aurora Glow, Profile Frame & Neon Tracers
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SECTION BASE WRAPPER
+   Full-screen min-height hero container with centered vertical alignment.
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: clip;
+  isolation: isolate;
+  padding-top: 7rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hero::-webkit-scrollbar {
+  display: none; /* Hide Chrome/Safari scrollbars completely */
+  width: 0;
+  height: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. AMBIENT AURORA & BLUR EFFECTS
+   Multi-layered gradient orbs creating ambient cyber backdrops.
+   -------------------------------------------------------------------------- */
+.hero__aurora {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__aurora span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.18;
+  animation: auroraFloat 24s ease-in-out infinite alternate;
+}
+
+.hero__aurora-1 {
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: -140px;
+  background: var(--clr-primary);
+}
+
+.hero__aurora-2 {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: 120px;
+  background: var(--clr-secondary);
+  animation-delay: 4s;
+}
+
+.hero__aurora-3 {
+  width: 320px;
+  height: 320px;
+  bottom: -120px;
+  left: 35%;
+  background: var(--clr-accent, #ec4899);
+  opacity: 0.08;
+  animation-delay: 8s;
+}
+
+/* --------------------------------------------------------------------------
+   3. BACKGROUND BLOBS & NOISE GRID
+   Subtle dot pattern texture and floating color gradients.
+   -------------------------------------------------------------------------- */
+.hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+}
+
+.hero__blob--purple {
+  width: 520px;
+  height: 520px;
+  left: -140px;
+  top: -340px;
+  background: var(--clr-primary);
+  opacity: 0.45;
+}
+
+.hero__blob--cyan {
+  width: 540px;
+  height: 540px;
+  right: -380px;
+  bottom: -120px;
+  background: #06b6d4;
+  opacity: 0.35;
+}
+
+.hero__blob--pink {
+  width: 380px;
+  height: 380px;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  background: var(--clr-accent, #ec4899);
+  opacity: 0.12;
+}
+
+.hero__noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  opacity: 0.05;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  left: -220px;
+  top: -180px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.18),
+    transparent 70%
+  );
+  filter: blur(80px);
+  z-index: -3;
+  animation: auroraPurple 18s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  right: -180px;
+  bottom: -180px;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.18),
+    transparent 70%
+  );
+  filter: blur(90px);
+  z-index: -3;
+  animation: auroraCyan 22s ease-in-out infinite alternate;
+}
+
+.hero__background::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  left: 45%;
+  top: 45%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+  background: linear-gradient(
+    transparent,
+    rgba(255, 255, 255, 0.025),
+    transparent
+  );
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO GRID LAYOUT
+   Two-column structure separating intro copy from profile visual cards.
+   -------------------------------------------------------------------------- */
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. LEFT CONTENT: TYPOGRAPHY, BUTTONS & STATS
+   Introductory typography, gradient title accents, and horizontal metrics.
+   -------------------------------------------------------------------------- */
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+  transform: translateY(4px);
+}
+
+.hero__intro {
+  font-size: 1.25rem;
+  color: var(--clr-text);
+}
+
+.hero__title {
+  font-size: clamp(4.3rem, 8vw, 6.5rem);
+  line-height: 0.92;
+  font-weight: 800;
+  letter-spacing: -3px;
+}
+
+.hero__title span {
+  background: linear-gradient(
+    90deg,
+    var(--clr-white),
+    var(--clr-primary-light),
+    var(--clr-secondary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--clr-white);
+}
+
+.hero__description {
+  max-width: 560px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--clr-text);
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Hero Stats */
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 10px;
+  max-width: 520px;
+}
+
+.hero__stat {
+  flex: 1;
+  padding: 0 48px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero__stat:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.hero__stat strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  padding: 2px 0px;
+  background: linear-gradient(90deg, var(--clr-secondary), #38bdf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__stat strong span {
+  font-size: inherit;
+  color: inherit;
+}
+
+.hero__stat span {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--clr-muted, #a1a1aa);
+}
+
+/* --------------------------------------------------------------------------
+   6. RIGHT CONTENT: MEDIA & PROFILE FRAME
+   Photo wrapper, glowing animated border traces, and floating card overlays.
+   -------------------------------------------------------------------------- */
+.hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__photo {
+  position: relative;
+  width: min(460px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__photo-glow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: var(--clr-primary);
+  opacity: 0.16;
+  filter: blur(90px);
+  top: 60px;
+  left: 70px;
+  z-index: -1;
+}
+
+/* Tracing border ring around photo card */
+.hero__photo-ring {
+  position: absolute;
+  inset: -16px;
+  border-radius: 42px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.hero__photo-ring::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--clr-secondary),
+    var(--clr-secondary-light),
+    transparent
+  );
+  top: 0;
+  left: -180px;
+  border-radius: 999px;
+  box-shadow:
+    0 0 12px var(--clr-secondary),
+    0 0 28px rgba(56, 189, 248, 0.65);
+  animation: ringTop 6s linear infinite;
+}
+
+.hero__photo-ring::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 180px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--clr-secondary),
+    #7dd3fc,
+    transparent
+  );
+  right: 0;
+  top: -180px;
+  border-radius: 999px;
+  box-shadow:
+    0 0 12px var(--clr-secondary),
+    0 0 28px rgba(56, 189, 248, 0.65);
+  animation: ringRight 6s linear infinite;
+  animation-delay: 3s;
+}
+
+.hero__photo-card {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--clr-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-lg);
+  z-index: 2;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Available badge with shine animation */
+.hero__card-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.hero__card-badge::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -80px;
+  width: 45px;
+  height: 140%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.85),
+    rgba(34, 211, 238, 0.8),
+    transparent
+  );
+  transform: skewX(-20deg);
+  filter: blur(2px);
+  animation: badgeShine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Floating social icons on photo card */
+.hero__social {
+  position: absolute;
+  top: 35%;
+  right: 28px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   7. FLOATING INFO SLIDER CARD
+   Glass card positioned overlapping bottom of photo displaying service highlights.
+   -------------------------------------------------------------------------- */
+.hero__info {
+  position: absolute;
+  left: 50%;
+  bottom: -48px;
+  transform: translateX(-50%);
+  width: 88%;
+  height: 140px;
+  z-index: 10;
+}
+
+.hero__info:hover {
+  transform: translateX(-50%) translateY(-6px);
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.12),
+    0 15px 40px rgba(0, 0, 0, 0.55),
+    0 0 38px rgba(56, 189, 248, 0.22);
+}
+
+.hero__info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(56, 189, 248, 0.55),
+    transparent
+  );
+}
+
+.hero__slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(110%);
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease,
+    visibility 0s linear 0.65s;
+}
+
+.hero__slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s ease;
+}
+
+.hero__slide.leave {
+  opacity: 0;
+  visibility: visible;
+  transform: translateX(-110%);
+}
+
+.hero__slide-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.hero__slide-icon-circle {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--clr-secondary);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.22);
+  flex-shrink: 0;
+}
+
+.hero__slide-icon-circle svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2;
+}
+
+.hero__slide h4 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.hero__slide p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* --------------------------------------------------------------------------
+   8. KEYFRAME ANIMATIONS
+   -------------------------------------------------------------------------- */
+/* Badge Light Reflection */
+@keyframes badgeShine {
+  0%,
+  65% {
+    left: -80px;
+    opacity: 0;
+  }
+  72% {
+    opacity: 1;
+  }
+  88% {
+    left: calc(100% + 80px);
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% + 80px);
+    opacity: 0;
+  }
+}
+
+/* Photo Card Neon Line Tracers */
+@keyframes ringTop {
+  0% {
+    left: -180px;
+  }
+  100% {
+    left: calc(100% + 180px);
+  }
+}
+
+@keyframes ringRight {
+  0% {
+    top: -180px;
+  }
+  100% {
+    top: calc(100% + 180px);
+  }
+}
+
+/* Aurora Floating Backgrounds */
+@keyframes auroraPurple {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(60px, -40px) scale(1.15);
+  }
+}
+
+@keyframes auroraCyan {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-50px, 40px) scale(1.12);
+  }
+}
+
+@keyframes auroraFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.08);
+  }
+  100% {
+    transform: translate(-25px, 25px) scale(0.95);
+  }
+}
+
+/* Utility Floating Effect */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero__stats {
+    margin-top: 32px;
+    max-width: 100%;
+  }
+
+  .hero__stat {
+    padding: 0 16px;
+  }
+
+  .hero__stat strong {
+    font-size: 23px;
+  }
+
+  .hero__stat span {
+    font-size: 11px;
+  }
+}
