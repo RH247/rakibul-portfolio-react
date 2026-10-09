@@ -1,0 +1,251 @@
+/* ==========================================================================
+   HEADER & NAVIGATION COMPONENT (navbar.css)
+   Project: Personal Portfolio React Template
+   Architecture: Floating Glassmorphic Header & Responsive Navigation Bar
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. FLOATING HEADER WRAPPER
+   Fixed floating island container with backdrop blur and inner lighting glow.
+   -------------------------------------------------------------------------- */
+.header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(95%, 1240px);
+  z-index: var(--z-fixed);
+  background: rgba(20, 20, 24, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    top var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+/* --------------------------------------------------------------------------
+   2. NAVBAR GRID LAYOUT
+   Three-column alignment for Brand Logo, Menu Links, and Action CTA Button.
+   -------------------------------------------------------------------------- */
+.navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  height: 88px;
+  padding-inline: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   3. BRAND LOGO
+   Stylized logo typography with cyan period accent and hover translation.
+   -------------------------------------------------------------------------- */
+.navbar__logo {
+  font-family: var(--ff-heading);
+  font-size: 1.9rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.5px;
+  transition: transform var(--transition);
+}
+
+.navbar__logo span {
+  color: var(--clr-secondary);
+}
+
+.navbar__logo:hover {
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION MENU CONTAINER
+   Centered flex container hosting the primary section links.
+   -------------------------------------------------------------------------- */
+.navbar__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.navbar__item--mobile-cta {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. NAVIGATION LINKS & ACTIVE STATES
+   Animated gradient underline indicator on hover and active section focus.
+   -------------------------------------------------------------------------- */
+.navbar__link {
+  position: relative;
+  padding-bottom: 8px;
+  color: var(--clr-text);
+  font-weight: var(--fw-medium);
+  transition: color var(--transition);
+}
+
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transform: translateX(-50%);
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    90deg,
+    var(--clr-primary),
+    var(--clr-secondary)
+  );
+  transition: width var(--transition);
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--clr-white);
+}
+
+.navbar__link:hover::after,
+.navbar__link.active::after {
+  width: 100%;
+}
+
+.navbar__link:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   6. MOBILE TOGGLE TRIGGER (DESKTOP HIDDEN)
+   -------------------------------------------------------------------------- */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.navbar__toggle span {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--clr-white);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Animated burger to X */
+.navbar__toggle--active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.navbar__toggle--active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle--active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   7. SCROLLED HEADER STATE
+   Compact header height with darkened glass backdrop triggered on page scroll.
+   -------------------------------------------------------------------------- */
+.header.header--scrolled {
+  top: 12px;
+  background: rgba(18, 18, 22, 0.78);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(139, 92, 246, 0.1);
+}
+
+.header.header--scrolled .navbar {
+  height: 72px;
+}
+
+/* --------------------------------------------------------------------------
+   8. MOBILE RESPONSIVE OVERRIDES (TABLET & MOBILE)
+   Desktop layout completely untouched. Only kicks in at max 900px.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .header {
+    top: 12px;
+    width: 92%;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding-inline: 16px;
+  }
+
+  .navbar__logo {
+    font-size: 1.55rem;
+  }
+
+  /* Desktop CTA button hide */
+  .navbar__cta-desktop,
+  .navbar > .btn--primary {
+    display: none !important;
+  }
+
+  /* Hamburger toggle visible on mobile */
+  .navbar__toggle {
+    display: flex;
+  }
+
+  /* Glassmorphism drop-down cyber menu */
+  .navbar__menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 17, 26, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.7),
+      0 0 25px rgba(56, 189, 248, 0.1);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem 1.5rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .navbar__menu--open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navbar__item--mobile-cta {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .navbar__item--mobile-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
