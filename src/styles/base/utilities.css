@@ -1,0 +1,142 @@
+/* ==========================================================================
+   REUSABLE UTILITIES SYSTEM (utilities.css)
+   Project: Personal Portfolio React Template
+   Architecture: Helper classes for typography, layout, glow & glassmorphism
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TEXT ALIGNMENT HELPERS
+   Convenience utilities for aligning inline and block text.
+   -------------------------------------------------------------------------- */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   2. DISPLAY HELPERS
+   Display switching utilities including forced hiding.
+   -------------------------------------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
+   3. FLEXBOX UTILITIES
+   Quick flex containers and alignment shortcuts.
+   -------------------------------------------------------------------------- */
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   4. GLASSMORPHISM EFFECT
+   Translucent frosted-glass backdrop with subtle border styling.
+   -------------------------------------------------------------------------- */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   5. AMBIENT GLOW EFFECTS
+   Positioned blur spheres for futuristic neon ambient backdrops.
+   -------------------------------------------------------------------------- */
+.blur-circle {
+  position: absolute;
+  width: 350px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.primary-glow {
+  background: var(--clr-primary);
+}
+
+.secondary-glow {
+  background: var(--clr-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   6. SPACING HELPERS (MARGINS)
+   Margin helpers using global spacing tokens.
+   -------------------------------------------------------------------------- */
+.mt-1 {
+  margin-top: var(--space-1);
+}
+
+.mt-2 {
+  margin-top: var(--space-2);
+}
+
+.mt-3 {
+  margin-top: var(--space-3);
+}
+
+.mb-1 {
+  margin-bottom: var(--space-1);
+}
+
+.mb-2 {
+  margin-bottom: var(--space-2);
+}
+
+.mb-3 {
+  margin-bottom: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   7. DIMENSION HELPERS
+   Full width container helper.
+   -------------------------------------------------------------------------- */
+.w-100 {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY HELPER (Screen Reader Only)
+   Hides content visually while remaining accessible to assistive devices.
+   -------------------------------------------------------------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
