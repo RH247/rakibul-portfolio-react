@@ -1,0 +1,160 @@
+/* ==========================================================================
+   PROJECTS PAGE STANDALONE STYLES (projects-page.css)
+   ========================================================================== */
+
+.projects-page-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   1. FULL-WIDTH SLEEK NEON SEPARATORS (Guaranteed 100% Viewport Width)
+   Exact subtle glow and opacity matching Skills & About pages
+   -------------------------------------------------------------------------- */
+.projects-page__separator {
+  width: 100% !important;
+  height: 1px !important;
+  margin: 4.5rem 0 3.5rem 0;
+  display: block !important;
+  position: relative !important;
+  z-index: 5 !important;
+  border: none !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(147, 51, 234, 0.2) 20%,
+    rgba(99, 102, 241, 0.3) 40%,
+    rgba(56, 189, 248, 0.45) 62%,
+    rgba(56, 189, 248, 0.2) 82%,
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 4px rgba(56, 189, 248, 0.08) !important;
+}
+
+.projects-page__separator--bottom {
+  margin-top: 4.5rem;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   2. ENGINEERING STANDARDS & ARCHITECTURE SECTION
+   -------------------------------------------------------------------------- */
+.projects-standards-section {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
+.projects-standards__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem auto;
+}
+
+.projects-standards__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.projects-standards__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.projects-standards__title span {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects-standards__desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.projects-standards__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.projects-standard__card {
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.projects-standard__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.projects-standard__icon-box {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.projects-standard__content {
+  flex: 1;
+}
+
+.projects-standard__heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.projects-standard__text {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   3. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .projects-standards__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-page__separator {
+    margin: 2.5rem 0 2rem 0;
+  }
+  
+  .projects-standards__title {
+    font-size: 1.75rem;
+  }
+
+  .projects-standard__card {
+    padding: 1.5rem;
+  }
+}

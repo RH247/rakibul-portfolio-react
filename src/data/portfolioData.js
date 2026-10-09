@@ -251,3 +251,42 @@ export const skillsPageData = {
     ],
   },
 };
+
+
+/* ==========================================================================
+   PROJECTS PAGE STANDALONE DATA
+   ========================================================================== */
+export const projectsPageData = {
+  architectureSection: {
+    badge: "ENGINEERING STANDARDS",
+    title: "How I Deliver",
+    titleHighlight: "Production Projects",
+    description: "Architectural principles, code ethics, and deployment pipelines applied across every software build.",
+    standards: [
+      {
+        id: "arch-1",
+        iconName: "Layers",
+        title: "Modular Component Architecture",
+        desc: "Strict separation of concerns, single-responsibility React hooks, and scalable folder structures ready for enterprise growth."
+      },
+      {
+        id: "arch-2",
+        iconName: "Zap",
+        title: "Performance & Asset Budgets",
+        desc: "Aggressive bundle optimization, image compression, lazy loading, and sub-second paint targets ensuring smooth 60fps UIs."
+      },
+      {
+        id: "arch-3",
+        iconName: "ShieldCheck",
+        title: "Cross-Platform Precision",
+        desc: "Thoroughly tested across Chrome, Firefox, Safari, and diverse mobile viewport matrices with zero layout shift."
+      },
+      {
+        id: "arch-4",
+        iconName: "GitMerge",
+        title: "Clean Git & Delivery Pipeline",
+        desc: "Atomic commit histories, feature branch workflows, and zero-downtime automated production deployments on modern edge CDNs."
+      }
+    ]
+  }
+};
