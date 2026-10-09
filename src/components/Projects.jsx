@@ -141,11 +141,13 @@ export default function Projects() {
               {/* Card Image Banner & Link Overlay */}
               <div className="projects__image-wrapper">
                 <img
-                  src={project.image}
-                  alt={project.title}
-                  className="projects__image"
-                  loading="lazy"
-                />
+  src={project.image}
+  alt={project.title}
+  className="projects__image"
+  width="800"
+  height="500"
+  loading="lazy"
+/>
                 <div className="projects__overlay">
                   <div className="projects__links">
                     <a

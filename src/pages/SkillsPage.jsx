@@ -13,11 +13,10 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-// Safe icon dictionary mapping data keys with Lucide icons
 const toolIcons = {
   GitBranch,
   Code,
-  Figma: Palette, // Safe fallback icon for Figma design tools
+  Figma: Palette,
   Palette,
   Zap,
   Send,
@@ -26,11 +25,6 @@ const toolIcons = {
   Terminal,
 };
 
-/**
- * SkillsPage Component
- * Standalone skills route page showcasing technical capability cards,
- * tools ecosystem, engineering workflows, and neon baseline separators.
- */
 export default function SkillsPage() {
   const { toolsSection, workflowSection } = skillsPageData || {};
 
@@ -101,23 +95,17 @@ export default function SkillsPage() {
                   <h4 className="skills-workflow__heading">{item.title}</h4>
                   <p className="skills-workflow__desc">{item.desc}</p>
                 </div>
-
-                {/* Bottom Card Neon Line */}
-                <div
-                  className="about__separator about__separator--bottom"
-                  aria-hidden="true"
-                ></div>
               </div>
             ))}
           </div>
         </section>
-
-        {/* Baseline Glowing Separator */}
-        <div
-          className="skills-page__bottom-separator"
-          aria-hidden="true"
-        ></div>
       </div>
+
+      {/* Container-er baire 100% full viewport width divider */}
+      <div
+        className="skills-page__bottom-separator"
+        aria-hidden="true"
+      ></div>
     </div>
   );
 }

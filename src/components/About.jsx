@@ -21,11 +21,13 @@ export default function About() {
             <div className="about__image-wrapper">
               <div className="about__image-bg"></div>
               <img
-                src={personalData.avatar}
-                className="about__image"
-                alt={personalData.name}
-                loading="lazy"
-              />
+  src={personalData.avatar}
+  className="about__image"
+  alt={personalData.name}
+  width="350"
+  height="380"
+  loading="lazy"
+/>
             </div>
 
             <div className="about__experience">
