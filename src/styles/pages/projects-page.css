@@ -8,8 +8,8 @@
 }
 
 /* --------------------------------------------------------------------------
-   1. REMOVE ORIGINAL SECTION BORDER & EXTRA GAP
-   Stops double borders so ONLY the sleek full-width separator is displayed
+   1. CORE PROJECTS SECTION OVERRIDES & SPACING RESET
+   Prevents double borders and excessive bottom whitespace
    -------------------------------------------------------------------------- */
 .projects-page-wrapper .projects {
   border-bottom: none !important;
@@ -32,13 +32,47 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. SINGLE SLEEK NEON SEPARATOR (100% Full Viewport Width)
-   Exact subtle glow and opacity matching Skills & About pages
+   2. GITHUB CTA BUTTON CENTERING FIX (Mobile, Tablet & Desktop)
+   Guarantees "Explore All Projects" button stays strictly centered on all devices
+   -------------------------------------------------------------------------- */
+.projects-page-wrapper .projects__cta,
+.projects-page-wrapper .projects__more,
+.projects-page-wrapper .projects__footer,
+.projects-page-wrapper .projects__github,
+.projects-page-wrapper .projects__bottom-action,
+.projects-page-wrapper .projects__action {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0 !important;
+  text-align: center !important;
+}
+
+.projects-page-wrapper .projects__cta a,
+.projects-page-wrapper .projects__cta button,
+.projects-page-wrapper .projects__more a,
+.projects-page-wrapper .projects__more button,
+.projects-page-wrapper .projects__footer a,
+.projects-page-wrapper .projects__footer button,
+.projects-page-wrapper .projects__github a,
+.projects-page-wrapper .projects__action a {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: inline-flex !important;
+  align-self: center !important;
+  text-align: center !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. SINGLE SLEEK NEON SEPARATOR (100% Full Viewport Width)
+   Subtle glow and opacity matching Skills & About pages
    -------------------------------------------------------------------------- */
 .projects-page__separator {
   width: 100% !important;
   height: 1px !important;
-  margin: 1.5rem 0 3.5rem 0 !important;
+  margin: 2rem 0 3.5rem 0 !important;
   display: block !important;
   position: relative !important;
   z-index: 5 !important;
@@ -61,7 +95,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. ENGINEERING STANDARDS & ARCHITECTURE SECTION
+   4. ENGINEERING STANDARDS & ARCHITECTURE SECTION
    -------------------------------------------------------------------------- */
 .projects-standards-section {
   position: relative;
@@ -97,7 +131,7 @@
   margin-bottom: 1rem;
 }
 
-/* Solid Hex Gradient - Guaranteed to never turn invisible */
+/* Gradient highlight text */
 .projects-standards__title span {
   background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%) !important;
   -webkit-background-clip: text !important;
@@ -165,7 +199,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. RESPONSIVE BREAKPOINTS
+   5. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   .projects-standards__grid {
@@ -174,8 +208,12 @@
 }
 
 @media (max-width: 768px) {
+  .projects-page-wrapper .projects {
+    padding-bottom: 1.25rem !important;
+  }
+
   .projects-page__separator {
-    margin: 1rem 0 2rem 0 !important;
+    margin: 1.5rem 0 2rem 0 !important;
   }
   
   .projects-standards__title {
@@ -184,5 +222,9 @@
 
   .projects-standard__card {
     padding: 1.5rem;
+  }
+
+  .projects-standards__header {
+    margin-bottom: 2rem;
   }
 }
