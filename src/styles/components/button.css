@@ -1,0 +1,99 @@
+/* ==========================================================================
+   BUTTON COMPONENT (button.css)
+   Project: Personal Portfolio React Template
+   Architecture: BEM Interactive Button Variants & State Transitions
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BASE BUTTON STYLES
+   Flexible container, typography tokens, radius, and smooth transitions.
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 0.95rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  font-family: var(--ff-body);
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+/* --------------------------------------------------------------------------
+   2. PRIMARY BUTTON VARIANT
+   Vibrant theme gradient background, glowing drop-shadow, and icon translation.
+   -------------------------------------------------------------------------- */
+.btn--primary {
+  color: var(--clr-white);
+  background: linear-gradient(
+    135deg,
+    var(--clr-primary),
+    var(--clr-secondary)
+  );
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn--primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--primary span {
+  transition: transform var(--transition);
+}
+
+.btn--primary:hover span {
+  transform: translateX(6px);
+}
+
+/* --------------------------------------------------------------------------
+   3. OUTLINE / GLASS BUTTON VARIANT
+   Subtle translucent background with hover border accent.
+   -------------------------------------------------------------------------- */
+.btn--outline {
+  color: var(--clr-white);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn--outline:hover {
+  border-color: var(--clr-primary);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-3px);
+}
+
+/* --------------------------------------------------------------------------
+   4. INTERACTIVE & ACCESSIBILITY STATES
+   Active press response, keyboard focus indicator, and disabled state handling.
+   -------------------------------------------------------------------------- */
+/* Click / Active Press */
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Keyboard Focus Visibility */
+.btn:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 4px;
+}
+
+/* Disabled State */
+.btn:disabled,
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
